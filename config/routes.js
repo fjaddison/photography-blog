@@ -1,8 +1,9 @@
 var express = require('express')
 var router = express.Router()
-// Parses information from POST
+// http://expressjs.com/en/resources/middleware/body-parser.html
 var bodyParser = require('body-parser')
-// Used to manipulate POST methods
+// for form submissions
+// https://github.com/expressjs/method-override
 var methodOverride = require('method-override')
 var passport = require("passport")
 var usersController = require('../controllers/users')
