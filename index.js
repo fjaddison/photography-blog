@@ -1,13 +1,13 @@
 const express = require ('express')
 const app = express()
-const hbs = require('handlebars')
+const hbs = require('hbs')
 const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
 const passport = require('passport')
 const session = require('express-session')
 const flash = require('connect-flash')
-const cookieParser = require("cookie-parser")
+const cookieParser = require('cookie-parser')
 const morgan = require('morgan')
 // const cookieParser = require('cookie-parser')
 const pictures = require('./controllers/pictures')
@@ -21,17 +21,18 @@ app.use(passport.session())
 app.use(flash())
 app.use(morgan('dev'))
 app.use(cookieParser())
-app.use(express.static(__dirname + '/public'))
+app.use('/assets', express.static(__dirname + '/public'))
+
 
 // require('./config/passport')(passport)
 
-app.use('/pictures', pictures)
-
-app.use(routes)
+// app.use(routes)
 
 app.set('port', process.env.PORT || 3100);
 app.set('view engine', 'hbs')
 app.set('views', './views')
+
+app.use('/pictures', pictures)
 
 app.use(function(req, res, next) {
     global.currentUser = req.user;
@@ -40,7 +41,7 @@ app.use(function(req, res, next) {
   })
 
 app.get('/', (req, res) => {
-    res.render('app-welcome')
+    res.render('pictures-index')
 })
 
 app.listen(app.get('port'), () => {
