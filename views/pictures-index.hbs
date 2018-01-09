@@ -1,11 +1,11 @@
-<h2>Recent Posts</h2>
+<h4>See the Archive</h4>
 
 <p>{{pictures.length}}</p>
 
 {{#each pictures as |picture index|}}
-
-  <img src="{{picture.pic}}">
-
+    <a href="/pictures/{{picture.title}}">
+        <img src="{{picture.pic}}" style="height:40vh;width:40vw;overflow:auto;">
+    </a>
 {{/each}}
 
 {{!-- <img src="assets/images/market.jpg"> --}}

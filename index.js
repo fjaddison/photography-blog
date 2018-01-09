@@ -41,8 +41,9 @@ app.use(function(req, res, next) {
   })
 
 app.get('/', (req, res) => {
-    res.render('pictures-index')
+    res.render('index')
 })
+
 
 app.listen(app.get('port'), () => {
     console.log('it is working')

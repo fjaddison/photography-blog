@@ -3,34 +3,25 @@ const mongoose  = require('../models/schema')
 const Pictures = mongoose.model('Pictures') // file extention not required
 
 const Router    = require('express').Router()
+
 Router.get('/', (req, res) => {
     Pictures.find({})
     .then(picturesData => {
-      res.render("pictures-index", {
+      res.render('pictures-index', {
         pictures: picturesData
-      });
+      })
     })
     .catch(err => {
       console.log(err);
     });
-  })
+})
 
-// const express = require("express");
-// const passport = require("passport");
-
-// const Pictures = require("../models/schema");
-// // assign schema (defined in schema.js) to variable
-
-// function picturesGetAll(request, response) {
-//   Pictures.find({})
-//     .then(newsData => {
-//       response.render("pictures-index", {
-//         pictures: picturesData
-//       });
-//     })
-//     .catch(err => {
-//       console.log(err);
-//     });
-// }
+Router.get('/pictures/:title', (req, res) => {
+    Pictures
+    .findOne({title: req.params.title})
+    .then(picture => {
+      res.render('pictures-show', { picture })
+    })
+})
 
 module.exports = Router

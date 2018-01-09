@@ -7,6 +7,7 @@ const CommentSchema = new mongoose.Schema({
 })
 
 const PicturesSchema = new mongoose.Schema({
+    title: String,
     pic: String,
     desc: String,
     dateCommented: Date,

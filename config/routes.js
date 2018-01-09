@@ -9,6 +9,8 @@ var passport = require("passport")
 var usersController = require('../controllers/users')
 var staticsController = require('../controllers/statics')
 
-router.route("/").get(staticsController.home);
+router.route('/').get(staticsController.home)
+
+router.route('/pictures/:title').get(staticsController.titlePage)
 
 module.exports = router
