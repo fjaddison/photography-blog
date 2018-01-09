@@ -11,6 +11,6 @@ var staticsController = require('../controllers/statics')
 
 router.route('/').get(staticsController.home)
 
-router.route('/pictures/:title').get(staticsController.titlePage)
+// router.route('/pictures/:title').get(staticsController.titlePage)
 
 module.exports = router

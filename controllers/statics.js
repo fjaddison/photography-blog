@@ -4,11 +4,10 @@ function home(req, res) {
   
 
 
-function titlePage(req, res) {  
-    res.render('pictures-show');
-  }
+// function titlePage(req, res) {  
+//     res.render('pictures-show');
+//   }
   
   module.exports = {
-    home: home,
-    titlePage: titlePage,
+    home: home
 }  
