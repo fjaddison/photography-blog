@@ -16,12 +16,23 @@ Router.get('/', (req, res) => {
     });
 })
 
-Router.get('/pictures/:title', (req, res) => {
-    Pictures
-    .findOne({title: req.params.title})
-    .then(picture => {
-      res.render('pictures-show', { picture })
+Router.get('/:title', (req, res) => {
+    Pictures.findOne({title: req.params.title}).then(picture => {
+        res.render('pictures-show', picture)
     })
 })
+
+
+
+// Router.get('/pictures/:title', (req, res) => {
+//     Pictures
+//     .findOne({title: req.params.title})
+//     .then(picture => {
+//       res.render('pictures-show', { picture })
+//     })
+//     .catch(err => {
+//         console.log(err);
+//       });
+// })
 
 module.exports = Router

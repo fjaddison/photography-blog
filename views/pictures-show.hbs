@@ -1,5 +1,9 @@
+<p>{{pictures.title}}</p>
+
 {{#unless pictures}}
-<h2>That picture couldn't be found!</h2>
+<img src="{{pictures.pic}}" style="height:40vh;width:40vw;overflow:auto;">
 {{else}}
-<img src="{{picture.pic}}" style="height:40vh;width:40vw;overflow:auto;">
+<h2>That picture couldn't be found!</h2>
 {{/unless}}
+
+
