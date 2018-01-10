@@ -4,6 +4,7 @@ const Pictures = mongoose.model('Pictures') // file extention not required
 
 const Router    = require('express').Router()
 
+// main page route. Would ideally like the /pictures route to be the index
 Router.get('/', (req, res) => {
     Pictures.find({})
     .then(picturesData => {
@@ -16,23 +17,21 @@ Router.get('/', (req, res) => {
     });
 })
 
+// routes to individual image
 Router.get('/:title', (req, res) => {
     Pictures.findOne({title: req.params.title}).then(picture => {
         res.render('pictures-show', picture)
     })
 })
 
-
-
-// Router.get('/pictures/:title', (req, res) => {
-//     Pictures
-//     .findOne({title: req.params.title})
-//     .then(picture => {
-//       res.render('pictures-show', { picture })
-//     })
-//     .catch(err => {
-//         console.log(err);
-//       });
-// })
+Router.post('/submit', (req, res) => {
+    Pictures.create(req.body.pictures)
+      .then(pictures => {
+        res.redirect(`/pictures`);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  })
 
 module.exports = Router

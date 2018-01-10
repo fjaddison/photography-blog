@@ -39,11 +39,14 @@ app.use(function(req, res, next) {
     res.locals.currentUser = req.user;
     next();
   })
-
+ 
 app.get('/', (req, res) => {
     res.render('index')
 })
 
+app.get('/submit', (req, res) => {
+  res.render('submit')
+})
 
 app.listen(app.get('port'), () => {
     console.log('it is working')
