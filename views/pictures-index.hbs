@@ -1,10 +1,12 @@
-<h4>See the Archive</h4>
+
 
 {{!-- <p>{{pictures.length}}</p> --}}
 
 {{#each pictures as |picture index|}}
+<p>{{picture.title}}:</p>    
     <a href="/pictures/{{picture.title}}">
-        <img src="{{picture.pic}}" style="height:40vh;width:40vw;overflow:auto;">
+        <img src="{{picture.pic}}" style="height:40vh;width:33vw;overflow:auto;">
     </a>
+<p>Uploaded {{picture.date}}</p>    
 {{/each}}
 

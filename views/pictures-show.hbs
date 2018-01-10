@@ -2,9 +2,19 @@
 <p>{{@root.length}}</p>
 
 {{#unless pictures}}
-<img src="{{@root.pic}}" style="height:40vh;width:40vw;overflow:auto;">
+<img src="{{@root.pic}}" style="height:40vh;width:33vw;overflow:auto;">
 {{else}}
 <h2>That picture couldn't be found!</h2>
 {{/unless}}
+
+<form action="/pictures/{{ @root.title }}?_method=put" method="post">
+    <div>
+        <label>Update Image Title</label>
+        <input type="text" name="@root[title]" placeholder="Update Title">
+    </div>
+    <div>
+        <button type="submit" class="btn" style="background-color:black;">Update Title!</button>
+    </div> 
+</form>
 
 

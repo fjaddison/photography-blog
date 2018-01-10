@@ -24,7 +24,7 @@ Router.get('/:title', (req, res) => {
     })
 })
 
-Router.post('/submit', (req, res) => {
+Router.post('/', (req, res) => {
     Pictures.create(req.body.pictures)
       .then(pictures => {
         res.redirect(`/pictures`);
@@ -32,6 +32,30 @@ Router.post('/submit', (req, res) => {
       .catch(err => {
         console.log(err);
       });
-  })
+})
+
+Router.put('/', (req, res) => {
+    Pictures.findOneAndUpdate({ title: req.params.title }, req.body, {
+        new: true
+      })
+        .then(news => {
+          res.redirect(`/pictures/`);
+        })
+        .catch(err => {
+          console.log(err);
+        });
+})
+
+// Router.put('/', (req, res) => {
+//     Pictures.findOneAndUpdate({ title: req.params.title }, req.body, {
+//         new: true
+//     })
+//         .then(pictures => {
+//         res.redirect(`/pictures/`);
+//         })
+//         .catch(err => {
+//         console.log(err);
+//         });
+// })
 
 module.exports = Router

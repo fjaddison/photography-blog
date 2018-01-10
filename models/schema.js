@@ -7,10 +7,16 @@ const CommentSchema = new mongoose.Schema({
 })
 
 const PicturesSchema = new mongoose.Schema({
-    title: String,
+    title: {
+        type: String,
+        required: true
+    },
     pic: String,
     desc: String,
-    dateCommented: Date,
+    date: {
+        type: Date,
+        default: Date.now 
+    },
     addedComment: [CommentSchema]
 })
 
