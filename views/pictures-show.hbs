@@ -1,5 +1,7 @@
 {{!-- https://stackoverflow.com/questions/12297959/access-properties-of-the-parent-with-a-handlebars-each-loop --}}
+
 <p>{{@root.length}}</p>
+<p>{{@root.title}}</p>
 
 {{#unless pictures}}
 <img src="{{@root.pic}}" style="height:40vh;width:33vw;overflow:auto;">
@@ -8,10 +10,10 @@
 {{/unless}}
 
 <div>
-    <form action="pictures/{{@root.title}}?_method=put" method="post">
+    <form action="?_method=put" method="post">
         <div>
             <label>Update Image Title</label>
-            <input type="text" name="pictures[title]"  value="{{@root.title}}">
+            <input type="text" name="pictures[title]" placeholder="Update Title">
         </div>
         <div>
             <button type="submit" class="btn" style="background-color:black;">Update Title!</button>

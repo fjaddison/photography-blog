@@ -40,10 +40,10 @@ Router.post('/', (req, res) => {
 
 // update image name
 Router.put('/:title', (req, res) => {
-    Pictures.findOneAndUpdate({ title: req.params.title }, req.body, {
+    Pictures.findOneAndUpdate({ title: req.params.title }, req.body.pictures, {
         new: true
       })
-        .then(news => {
+        .then(pictures => {
           res.redirect(`/pictures/${pictures.title}`);
         })
         .catch(err => {
