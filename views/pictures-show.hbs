@@ -8,10 +8,10 @@
 {{/unless}}
 
 <div>
-    <form action="/pictures/{{ @root.title }}?_method=put" method="post">
+    <form action="pictures/{{@root.title}}?_method=put" method="post">
         <div>
             <label>Update Image Title</label>
-            <input type="text" name="@root[title]" placeholder="Update Title">
+            <input type="text" name="pictures[title]"  value="{{@root.title}}">
         </div>
         <div>
             <button type="submit" class="btn" style="background-color:black;">Update Title!</button>

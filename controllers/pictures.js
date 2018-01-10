@@ -1,7 +1,7 @@
 const methodOverride = require('method-override')
 
 const mongoose  = require('../models/schema')
-// assign schema (defibned in schema.js) to variable
+// assign schema (defined in schema.js) to variable
 const Pictures = mongoose.model('Pictures') // file extention not required
 
 const Router    = require('express').Router()
@@ -39,12 +39,12 @@ Router.post('/', (req, res) => {
 })
 
 // update image name
-Router.put('/', (req, res) => {
+Router.put('/:title', (req, res) => {
     Pictures.findOneAndUpdate({ title: req.params.title }, req.body, {
         new: true
       })
         .then(news => {
-          res.redirect('/pictures/');
+          res.redirect(`/pictures/${pictures.title}`);
         })
         .catch(err => {
           console.log(err);
@@ -59,10 +59,10 @@ Router.put('/', (req, res) => {
 //     )
 // })
 
-Router.delete('/', (req, res) => {
+Router.delete('/:title', (req, res) => {
     Pictures.findOneAndRemove({ title: req.params.title })
       .then(() => {
-        response.redirect('/pictures');
+        res.redirect('/pictures');
       })
       .catch(err => {
         console.log(err);

@@ -1,3 +1,6 @@
+// may keep this file when I begin to think about passport authentication
+
+
 // var express = require('express')
 
 // // http://expressjs.com/en/resources/middleware/body-parser.html

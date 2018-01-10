@@ -1,5 +1,6 @@
 # photography-blog
 
+
 {
     picture: String
     date: Date
