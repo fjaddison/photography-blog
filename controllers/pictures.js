@@ -1,8 +1,11 @@
+const methodOverride = require('method-override')
+
 const mongoose  = require('../models/schema')
 // assign schema (defibned in schema.js) to variable
 const Pictures = mongoose.model('Pictures') // file extention not required
 
 const Router    = require('express').Router()
+
 
 // main page route. Would ideally like the /pictures route to be the index
 Router.get('/', (req, res) => {
@@ -24,6 +27,7 @@ Router.get('/:title', (req, res) => {
     })
 })
 
+// submit new image
 Router.post('/', (req, res) => {
     Pictures.create(req.body.pictures)
       .then(pictures => {
@@ -34,28 +38,36 @@ Router.post('/', (req, res) => {
       });
 })
 
+// update image name
 Router.put('/', (req, res) => {
     Pictures.findOneAndUpdate({ title: req.params.title }, req.body, {
         new: true
       })
         .then(news => {
-          res.redirect(`/pictures/`);
+          res.redirect('/pictures/');
         })
         .catch(err => {
           console.log(err);
         });
 })
 
-// Router.put('/', (req, res) => {
-//     Pictures.findOneAndUpdate({ title: req.params.title }, req.body, {
-//         new: true
-//     })
-//         .then(pictures => {
-//         res.redirect(`/pictures/`);
-//         })
-//         .catch(err => {
-//         console.log(err);
-//         });
+// Router.delete('/:id', (req, res) => {
+//     Pictures.findOneAndRemove({ _id: req.params.id }, req.body).then(pictures =>
+//       Pictures.find({}).then(pictures => {
+//         res.redirect('/pictures')
+//       })
+//     )
 // })
+
+Router.delete('/', (req, res) => {
+    Pictures.findOneAndRemove({ title: req.params.title })
+      .then(() => {
+        response.redirect('/pictures');
+      })
+      .catch(err => {
+        console.log(err);
+      });
+})
+
 
 module.exports = Router

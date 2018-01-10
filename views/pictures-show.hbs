@@ -7,14 +7,21 @@
 <h2>That picture couldn't be found!</h2>
 {{/unless}}
 
-<form action="/pictures/{{ @root.title }}?_method=put" method="post">
-    <div>
-        <label>Update Image Title</label>
-        <input type="text" name="@root[title]" placeholder="Update Title">
-    </div>
-    <div>
-        <button type="submit" class="btn" style="background-color:black;">Update Title!</button>
-    </div> 
-</form>
+<div>
+    <form action="/pictures/{{ @root.title }}?_method=put" method="post">
+        <div>
+            <label>Update Image Title</label>
+            <input type="text" name="@root[title]" placeholder="Update Title">
+        </div>
+        <div>
+            <button type="submit" class="btn" style="background-color:black;">Update Title!</button>
+        </div> 
+    </form>
+    <form action="/pictures/{{ @root.title }}?_method=delete" method="post">
+        <div>
+            <button type="submit" class="btn" style="background-color:black;">Delete Image!</button>
+        </div>
+    </form>
+</div>
 
 

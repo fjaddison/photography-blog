@@ -1,16 +1,18 @@
-var express = require('express')
-var router = express.Router()
-// http://expressjs.com/en/resources/middleware/body-parser.html
-var bodyParser = require('body-parser')
-// for form submissions
-// https://github.com/expressjs/method-override
-var methodOverride = require('method-override')
-var passport = require("passport")
-var usersController = require('../controllers/users')
-var staticsController = require('../controllers/statics')
+// var express = require('express')
 
-router.route('/').get(staticsController.home)
+// // http://expressjs.com/en/resources/middleware/body-parser.html
+// var bodyParser = require('body-parser')
+// // for form submissions
+// // https://github.com/expressjs/method-override
+// var methodOverride = require('method-override')
+// var router = express.Router()
+// var passport = require("passport")
+// var usersController = require('../controllers/users')
+// var staticsController = require('../controllers/statics')
 
-// router.route('/pictures/:title').get(staticsController.titlePage)
 
-module.exports = router
+// // router.route('/').get(staticsController.home)
+
+// // router.route('/pictures/:title').get(staticsController.titlePage)
+
+// module.exports = router
