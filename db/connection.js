@@ -7,11 +7,13 @@ const mongoose = require('mongoose')
 //     mongoose.connect('mongodb://localhost/photo-blog', { useMongoClient: true });
 // }
 
+const dataBase = require('../config/database')
+
 const mongoUri = 'mongodb://localhost/photo-blog'
 
 mongoose
-  .connect(mongoUri, {useMongoClient: true})
-  .then(connection => console.log(`Connection established to db '${connection.db.databaseName}'`))
+  .connect(dataBase.mongoURI, {useMongoClient: true})
+  .then(connection => console.log(`Connection established to db`))
   .catch(connectionError => console.log('Connection failed!', connectionError))
 
 
