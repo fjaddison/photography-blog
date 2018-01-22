@@ -1,4 +1,4 @@
-//linking mongoose to the locally seeded database
+// linking mongoose to the locally seeded database
 const mongoose = require('mongoose')
 
 // if (process.env.NODE_ENV == 'production') {
@@ -15,7 +15,6 @@ mongoose
   .connect(dataBase.mongoURI, {useMongoClient: true})
   .then(connection => console.log(`Connection established to db`))
   .catch(connectionError => console.log('Connection failed!', connectionError))
-
 
 mongoose.Promise = Promise
 
