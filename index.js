@@ -15,7 +15,7 @@ const routes = require('./config/routes')
 const cors = require('cors')
 
 app.use(methodOverride('_method'))
-app.use('cors')
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(session({ secret: 'Julian-Photo-Blog' }))
 app.use(passport.initialize())
