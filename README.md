@@ -53,7 +53,9 @@ Mongoose, Express, Handlebars, Node.JS, MongoDB, Heroku, MLAB
 ## Installation
 None required. View the deployed [Heroku](https://polar-meadow-82770.herokuapp.com/) demo, or for and clone from the [repo](https://github.com/fjaddison/photography-blog)
 
-##Contribution
+<!-- add set up instructions for cloning down the repository -->
+
+## Contribution
 Is more than welcome.
 
 ## Sources/Inspiration
