@@ -1,21 +1,5 @@
-// may keep this file when I begin to think about passport authentication
+// https://git.generalassemb.ly/ga-wdi-exercises/express-passport-local-authentication/blob/solution/config/routes.js
 
+// https://git.generalassemb.ly/ga-wdi-exercises/express-passport-local-authentication/blob/solution/controllers/users.js
 
-// var express = require('express')
-
-// // http://expressjs.com/en/resources/middleware/body-parser.html
-// var bodyParser = require('body-parser')
-// // for form submissions
-// // https://github.com/expressjs/method-override
-// var methodOverride = require('method-override')
-// var router = express.Router()
-// var passport = require("passport")
-// var usersController = require('../controllers/users')
-// var staticsController = require('../controllers/statics')
-
-
-// // router.route('/').get(staticsController.home)
-
-// // router.route('/pictures/:title').get(staticsController.titlePage)
-
-// module.exports = router
+// You can combine these into one file if that makes it easier. Replace the code in the router with the code referenced from the controller file.

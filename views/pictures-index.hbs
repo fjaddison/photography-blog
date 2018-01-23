@@ -4,9 +4,10 @@
 
 {{#each pictures as |picture index|}}
 <p>{{picture.title}}:</p>    
+    {{!-- could change this to the below for use with mongodb idssee comment in controllers/pictures for cross-reference--}}
     <a href="/pictures/{{picture.title}}">
+    {{!-- <a href="/pictures/{{picture._id}}"> --}}
         <img src="{{picture.pic}}" style="height:40vh;width:33vw;overflow:auto;">
     </a>
 <p>Uploaded {{picture.date}}</p>    
 {{/each}}
-

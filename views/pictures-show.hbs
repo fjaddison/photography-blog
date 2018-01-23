@@ -4,9 +4,12 @@
 <p>{{@root.title}}</p>
 
 {{#unless pictures}}
-<img src="{{@root.pic}}" style="height:40vh;width:33vw;overflow:auto;">
+    {{!-- I would add a CSS rule in your stylesheet for these images --}}
+    {{!-- Avoiding in-line styles means that if you want to later change things, you don't have to jump around later--}}
+    <img src="{{@root.pic}}" style="height:40vh;width:33vw;overflow:auto;">
 {{else}}
-<h2>That picture couldn't be found!</h2>
+    {{!-- Nice error handling --}}
+    <h2>That picture couldn't be found!</h2>
 {{/unless}}
 
 <div>
@@ -16,7 +19,7 @@
             <input type="text" name="pictures[title]" placeholder="Update Title">
         </div>
         <div>
-            <button type="submit" class="btn" style="background-color:black;">Update Title!</button>
+            <button type="submit" class="btn" style="background-color:black;"> Update Title! </button>
         </div> 
     </form>
     <form action="/pictures/{{ @root.title }}?_method=delete" method="post">
@@ -25,5 +28,3 @@
         </div>
     </form>
 </div>
-
-
