@@ -16,7 +16,8 @@ const routes         = require('./config/routes')
 
 app.use(methodOverride("_method"))
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(session({ secret: 'Julian-Photo-Blog' }))
+app.use(session({ secret: 'Julian-Photo-Blog' })) // store secrets in the environment with dotenv
+// docs here https://github.com/motdotla/dotenv
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(flash())

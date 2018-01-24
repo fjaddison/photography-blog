@@ -2,13 +2,9 @@
 // the mongoDB
 
 const Pictures = require('../models/schema')
-const seedData = require('./seeds.json')
+const seedData = require('./seeds.json') //add more seeds to seeds.json. you have a bunch of images in your public folder and so you might try adding in a relative url to the image, 
 
+// Can rewrite
 Pictures.remove({})
-  .then(() => {
-    return Pictures.collection.insert(seedData);
-  })
-  .then(() => {
-    process.exit();
-})
-
+  .then(() => Pictures.collection.insert(seedData))
+  .then(() => process.exit())
