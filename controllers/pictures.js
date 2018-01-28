@@ -36,7 +36,7 @@ Router.get('/:title', (req, res) => {
 Router.post('/', (req, res) => {
   Pictures.create(req.body.pictures)
       .then(pictures => {
-        res.redirect(`/pictures`)
+        res.json(pictures)
       })
       .catch(err => {
         console.log(err)
