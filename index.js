@@ -1,5 +1,4 @@
 // https://www.udemy.com/nodejs-express-mongodb-dev-to-deployment/learn/v4/t/lecture/8061022?start=0
-
 const express = require('express')
 const app = express()
 const hbs = require('hbs')
@@ -13,8 +12,10 @@ const cookieParser = require('cookie-parser')
 const morgan = require('morgan')
 const pictures = require('./controllers/pictures')
 const routes = require('./config/routes')
+const cors = require('cors')
 
 app.use(methodOverride('_method'))
+app.use(cors())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(session({ secret: 'Julian-Photo-Blog' }))
 app.use(passport.initialize())

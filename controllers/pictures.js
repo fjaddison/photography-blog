@@ -1,3 +1,5 @@
+const methodOverride = require('method-override')
+
 const mongoose = require('../models/schema')
 // assign schema (defined in schema.js) to variable
 const Pictures = mongoose.model('Pictures') // file extention not required
@@ -5,6 +7,18 @@ const Pictures = mongoose.model('Pictures') // file extention not required
 const Router = require('express').Router()
 
 // main page route. Would ideally like the /pictures route to be the index
+// Router.get('/', (req, res) => {
+//   Pictures.find({})
+//     .then(picturesData => {
+//       res.render('pictures-index', {
+//         pictures: picturesData
+//       })
+//     })
+//     .catch(err => {
+//       console.log(err)
+//     })
+// })
+
 Router.get('/', (req, res) => {
   Pictures.find({})
     .then(picturesData => {
@@ -48,14 +62,7 @@ Router.put('/:title', (req, res) => {
         })
 })
 
-// Router.delete('/:id', (req, res) => {
-//     Pictures.findOneAndRemove({ _id: req.params.id }, req.body).then(pictures =>
-//       Pictures.find({}).then(pictures => {
-//         res.redirect('/pictures')
-//       })
-//     )
-// })
-
+// delete image
 Router.delete('/:title', (req, res) => {
   Pictures.findOneAndRemove({ title: req.params.title })
       .then(() => {
