@@ -3,9 +3,9 @@
 {{!-- <p>{{pictures.length}}</p> --}}
 
 {{#each pictures as |picture index|}}
-<p>{{picture.title}}:</p>    
+<p style="font-size:30px;">{{picture.title}}</p>    
     <a href="/pictures/{{picture.title}}">
-        <img src="{{picture.pic}}" style="height:40vh;width:33vw;overflow:auto;">
+        <img class="picture" src="{{picture.pic}}" style="height:530px;width:780px;overflow:auto;">
     </a>
 <p>Uploaded {{picture.date}}</p>    
 {{/each}}

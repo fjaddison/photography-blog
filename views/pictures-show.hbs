@@ -1,10 +1,9 @@
 {{!-- https://stackoverflow.com/questions/12297959/access-properties-of-the-parent-with-a-handlebars-each-loop --}}
 
-<p>{{@root.length}}</p>
-<p>{{@root.title}}</p>
+<p style="font-size:30px;">{{@root.title}}</p>
 
 {{#unless pictures}}
-<img src="{{@root.pic}}" style="height:40vh;width:33vw;overflow:auto;">
+<img class="picture" src="{{@root.pic}}" style="height:530px;width:780px;overflow:auto;">
 {{else}}
 <h2>That picture couldn't be found!</h2>
 {{/unless}}
